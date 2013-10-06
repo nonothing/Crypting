@@ -9,8 +9,8 @@ public class Tritemius {
     private MatchParser parser;
     private int alphabetSize;
     Tritemius() {
-        for (char c = 'à'; c <= 'ÿ'; c++) {
-            alphabet.add(c);
+        for (char symbol = 'à'; symbol <= 'ÿ'; symbol++) {
+            alphabet.add(symbol);
         }
         alphabetSize = alphabet.size();
         parser = new MatchParser();
@@ -22,11 +22,11 @@ public class Tritemius {
 
         for (int i = 0; i < text.length(); i++) {
             parser.setVariable("n", (double) i);
-            char c = text.charAt(i);
-            if (c == ' ') {
+            char symbol = text.charAt(i);
+            if (symbol == ' ') {
                 cryptogram.append(" ");
             } else {
-                int index = alphabet.indexOf(c);
+                int index = alphabet.indexOf(symbol);
                 try {
                     key = (int) parser.Parse(formula);
 
@@ -56,12 +56,12 @@ public class Tritemius {
         }
         
         for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
+            char symbol = text.charAt(i);
             parser.setVariable("n", (double) i);
-            if (c == ' ') {
+            if (symbol == ' ') {
                 newText.append(" ");
             } else {
-                int index = alphabet.indexOf(c);
+                int index = alphabet.indexOf(symbol);
                 try {
                     key = (int) parser.Parse(formula);
 

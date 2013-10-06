@@ -7,8 +7,8 @@ public class XOR {
     private ArrayList <Character> alphabet = new ArrayList<Character>();
     private int alphabetSize; 
     XOR() {
-        for (char c = 'à'; c <= 'ÿ'; c++) {
-            alphabet.add(c);
+        for (char symbol = 'à'; symbol <= 'ÿ'; symbol++) {
+            alphabet.add(symbol);
         }
         alphabetSize = alphabet.size();
     }
@@ -18,11 +18,11 @@ public class XOR {
 
         key = key % alphabetSize;
         for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if(c == ' '){
+            char symbol = text.charAt(i);
+            if(symbol == ' '){
                 cryptogram.append(" ");
             }else{
-            int index = alphabet.indexOf(c);
+            int index = alphabet.indexOf(symbol);
             index = xor(index,random(key, i))%alphabetSize;
             cryptogram.append(alphabet.get(index));
             }

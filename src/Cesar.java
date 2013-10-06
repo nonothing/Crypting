@@ -6,8 +6,8 @@ public class Cesar {
     private int alphabetSize;
 
     Cesar() {
-        for (char c = 'à'; c <= 'ÿ'; c++) {
-            alphabet.add(c);
+        for (char symbol = 'à'; symbol <= 'ÿ'; symbol++) {
+            alphabet.add(symbol);
         }
         alphabetSize = alphabet.size();
     }
@@ -18,11 +18,11 @@ public class Cesar {
 
         StringBuilder cryptogram = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (c == ' ') {
+            char symbol = text.charAt(i);
+            if (symbol == ' ') {
                 cryptogram.append(" ");
             } else {
-                int index = alphabet.indexOf(c);
+                int index = alphabet.indexOf(symbol);
                 index = (index + key) % alphabetSize;
                 cryptogram.append(alphabet.get(index));
             }
@@ -43,11 +43,11 @@ public class Cesar {
         }
 
         for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (c == ' ') {
+            char symbol = text.charAt(i);
+            if (symbol == ' ') {
                 newText.append(" ");
             } else {
-                int index = alphabet.indexOf(c);
+                int index = alphabet.indexOf(symbol);
                 index = (((index - key) * reversedM) % alphabetSize + alphabetSize)
                         % alphabetSize;
                 newText.append(alphabet.get(index));
