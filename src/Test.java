@@ -23,5 +23,12 @@ public class Test {
         String decryptBacon = new Bacon().decrypt(cryptBacon);
         System.out.println("Bacon crypt:" + cryptBacon);
         System.out.println("Bacon decrypt:" + decryptBacon);
+        
+        String cryptVigenere = new Vigenere().encrypt(str.toLowerCase(), "асд");
+        String decryptVigenere = new Vigenere().decrypt(cryptVigenere, "асд");
+        System.out.println("Vigenere crypt:" + cryptVigenere);
+        System.out.println("Vigenere decrypt:" + decryptVigenere);
+
+
     }
 }
