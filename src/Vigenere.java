@@ -43,8 +43,8 @@ public class Vigenere {
             if (symbol == ' ') {
                 result.append(" ");
             } else {
-                int numberKey = key.charAt(i) - 'à';
-                int numberText = symbol - 'à';
+                int numberKey = key.charAt(i) - alphabet.get(0);
+                int numberText = symbol - alphabet.get(0);
                 result.append(table[numberText].charAt(numberKey));
             }
         }
@@ -59,11 +59,13 @@ public class Vigenere {
             if (symbol == ' ') {
                 result.append(" ");
             } else {
-            int numberKey = key.charAt(i) - 'à';
-            int numberText = symbol - 'à';
-            result.append(alphabet.get((numberText - numberKey + alphabetSize)
-                    % alphabetSize));
-        }}
+                int numberKey = key.charAt(i) - alphabet.get(0);
+                int numberText = symbol - alphabet.get(0);
+                result.append(alphabet
+                        .get((numberText - numberKey + alphabetSize)
+                                % alphabetSize));
+            }
+        }
         return result.toString();
     }
 

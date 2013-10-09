@@ -28,7 +28,11 @@ public class Test {
         String decryptVigenere = new Vigenere().decrypt(cryptVigenere, "асд");
         System.out.println("Vigenere crypt:" + cryptVigenere);
         System.out.println("Vigenere decrypt:" + decryptVigenere);
-
-
+        
+        String cryptHill = new Hill().encrypt("welcome");
+        String decryptHill = new Hill().decrypt(cryptHill);
+        System.out.println("Hill crypt:" + cryptHill); 
+        System.out.println("Hill decrypt:" + decryptHill);
+        
     }
 }
