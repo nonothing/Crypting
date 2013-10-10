@@ -34,5 +34,9 @@ public class Test {
         System.out.println("Hill crypt:" + cryptHill); 
         System.out.println("Hill decrypt:" + decryptHill);
         
+        String cryptPlayfair = new Playfair().encrypt("hidethegoldinthetreestump", "playfair example");
+        String decryptPlayfair = new Playfair().decrypt(cryptPlayfair, "playfair example");
+        System.out.println("Playfair crypt:" + cryptPlayfair);
+        System.out.println("Playfair decrypt:" + decryptPlayfair);
     }
 }
