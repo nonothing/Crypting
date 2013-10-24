@@ -38,5 +38,21 @@ public class Test {
         String decryptPlayfair = new Playfair().decrypt(cryptPlayfair, "playfair example");
         System.out.println("Playfair crypt:" + cryptPlayfair);
         System.out.println("Playfair decrypt:" + decryptPlayfair);
+
+        
+        DiffieHellman diffieHellman = new DiffieHellman();
+        diffieHellman.setKeyA(24);
+        diffieHellman.setKeyB(54);
+        diffieHellman.setGenerator(3);
+        diffieHellman.setMod(17);
+        diffieHellman.createSecretKey();
+
+        String cryptDiffieHellman = diffieHellman.encrypt(str.toLowerCase());
+        String decryptDiffieHellman = diffieHellman.decrypt(cryptDiffieHellman);
+        System.out.println("cryptDiffieHellman:" + cryptDiffieHellman);
+        System.out.println("decryptDiffieHellman:" + decryptDiffieHellman);
+     
+        
+
     }
 }

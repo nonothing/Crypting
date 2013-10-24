@@ -168,23 +168,15 @@ public class Playfair {
 
     private int[] findSymbol(char one, char two, String[] matrix) {
         int result[] = new int[4];
-        int index = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length(); j++) {
                 if (one == matrix[i].charAt(j)) {
-                    result[index] = i;
-                    result[index + 1] = j;
-                    index += 2;
+                    result[0] = i;
+                    result[1] = j;
                 }
-            }
-        }
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length(); j++) {
                 if (two == matrix[i].charAt(j)) {
-                    result[index] = i;
-                    result[index + 1] = j;
-                    index += 2;
+                    result[2] = i;
+                    result[3] = j;
                 }
             }
         }
