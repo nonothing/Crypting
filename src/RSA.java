@@ -42,7 +42,7 @@ public class RSA {
         return cryptogram.toString();
     }
 
-    private int findPrivateKey(int d, int m){
+    private int findPublicKey(int d, int m){
         int result = 2;
         while (true){
             if((result*d)%m == 1)break;
@@ -65,7 +65,7 @@ public class RSA {
         return new BigInteger(String.valueOf(number)).modPow(new BigInteger(String.valueOf(degree)), new BigInteger(String.valueOf(mod)));
     }
     
-    private int findPublicKey(int m){
+    private int findPrivateKey(int m){
         for(int i=2; i < m; i++)
             if(gcd(i, m)==1)return i;
         return 0;
@@ -74,8 +74,8 @@ public class RSA {
     public void createKey(){
         generalNumber = onePrimeNumber * twoPrimeNumber;
         int gamaN = (onePrimeNumber-1)*(twoPrimeNumber-1);
-        privateKey = findPublicKey(gamaN);
-        publicKey = findPrivateKey(privateKey, gamaN);
+        privateKey = findPrivateKey(gamaN);
+        publicKey = findPublicKey(privateKey, gamaN);
         showKey(privateKey, generalNumber);
         showKey(publicKey, generalNumber);
     }
