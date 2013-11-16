@@ -1,4 +1,3 @@
-
 public class Test {
     public static void main(String args[]) {
 
@@ -46,13 +45,19 @@ public class Test {
         diffieHellman.setGenerator(3);
         diffieHellman.setMod(17);
         diffieHellman.createSecretKey();
-
         String cryptDiffieHellman = diffieHellman.encrypt(str.toLowerCase());
         String decryptDiffieHellman = diffieHellman.decrypt(cryptDiffieHellman);
-        System.out.println("cryptDiffieHellman:" + cryptDiffieHellman);
-        System.out.println("decryptDiffieHellman:" + decryptDiffieHellman);
+        System.out.println("crypt DiffieHellman:" + cryptDiffieHellman);
+        System.out.println("decryp tDiffieHellman:" + decryptDiffieHellman);
      
         
-
+        RSA rsa = new RSA();
+        rsa.setP(3);
+        rsa.setQ(11);
+        rsa.createKey();
+        String cryptRSA = rsa.encrypt("cab",rsa.getPublicNumber(),rsa.getGeneralNumber());
+        String decryptRSA = rsa.decrypt(cryptRSA,rsa.getPrivateNumber(),rsa.getGeneralNumber());
+        System.out.println("crypt RSA:" + cryptRSA);
+        System.out.println("decrypt RSA:"+decryptRSA);
     }
 }
